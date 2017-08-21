@@ -5,7 +5,6 @@ import com.example.structure.router.MainRouter;
 import com.example.ui.MainActivity;
 import com.example.ui.MyFragment;
 
-
 import javax.inject.Inject;
 
 public class MainRouterImpl extends BaseRouterImpl<MainActivity> implements MainRouter {
@@ -17,7 +16,7 @@ public class MainRouterImpl extends BaseRouterImpl<MainActivity> implements Main
 
 
     @Override
-    public void showSomeScreen() {
-        replaceFragment(R.id.content, new MyFragment());
+    public void showSomeScreen(int id) {
+        replaceFragment(R.id.content, MyFragment.create(id));
     }
 }

@@ -3,12 +3,21 @@ package com.example.dagger.modules.main;
 import com.example.structure.presenter.MyView;
 import com.example.ui.MyFragment;
 
+import javax.inject.Named;
+
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
-public interface MyFragmentModule {
+public abstract class MyFragmentModule {
 
     @Binds
-    MyView myView(MyFragment myFragment);
+    public abstract MyView myView(MyFragment myFragment);
+
+    @Provides
+    @Named("someId")
+    public static int provideSomeId(MyFragment myFragment) {
+        return myFragment.getSomeId();
+    }
 }

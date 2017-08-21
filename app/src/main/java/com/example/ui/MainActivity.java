@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        router.showSomeScreen();
+        router.showSomeScreen(777);
     }
 
 
